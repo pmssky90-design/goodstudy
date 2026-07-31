@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<nav class="breadcrumb"><a href="/">홈</a>{% if parent %}<span>›</span><a href="/{{ parent.slug }}/">{{ parent.breadcrumb_label }}</a>{% endif %}<span>›</span><span>{{ page.breadcrumb_label }}</span></nav>
+<article><h1>{{ page.title }}</h1><div class="content">{{ body_html|safe }}</div></article>
+{% if children %}<section><h2>하위 지역과 학습 정보</h2><div class="cards">{% for item in children %}<a class="card" href="/{{ item.slug }}/">{{ item.link_label }}</a>{% endfor %}</div></section>{% endif %}
+{% if related %}<section><h2>함께 살펴볼 학습 정보</h2><div class="chips">{% for item in related %}<a href="/{{ item.slug }}/">{{ item.link_label }}</a>{% endfor %}</div></section>{% endif %}
+{% endblock %}

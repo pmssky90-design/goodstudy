@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="application-name" content="{{ site_name }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site_name }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/favicon/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  {% block structured %}{% endblock %}
+</head>
+<body>
+<header><a class="brand" href="/"><span class="mark">G</span>{{ site_name }}</a><span class="brand-en">{{ site_name_en }}</span></header>
+<main>{% block content %}{% endblock %}</main>
+<footer><strong>{{ site_name }}</strong><p>학생의 현재 학습을 차분히 살피는 지역·학교별 교육 정보</p></footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<section class="home-explore-section subject-explore" aria-labelledby="subject-explore-title">
+  <div class="section-heading">
+    <span class="section-kicker">과목별 탐색</span>
+    <h2 id="subject-explore-title">과목별 과외 찾기</h2>
+    <p>지역을 기준으로 수학과 영어 학습 정보를 나누어 살펴보세요.</p>
+  </div>
+  <div class="subject-explore-grid">
+    <section class="subject-explore-group" id="math" aria-labelledby="math-explore-title">
+      <div class="subject-group-heading">
+        <h3 id="math-explore-title">수학과외 찾기</h3>
+        <p>개념 이해, 유형 적용, 내신 준비와 관련된 지역별 수학 학습 정보를 살펴보세요.</p>
+      </div>
+      <div class="subject-link-grid">
+        {% for item in math_links %}
+        <a class="subject-link-card" data-subject="math" href="/{{ item.slug }}/">
+          <span class="card-badge">수학</span>
+          <strong>{{ item.province }} 수학과외</strong>
+          <span>지역별 수학 학습 정보</span>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="subject-explore-group" id="english" aria-labelledby="english-explore-title">
+      <div class="subject-group-heading">
+        <h3 id="english-explore-title">영어과외 찾기</h3>
+        <p>어휘, 문법, 독해와 학교 시험 준비에 관한 지역별 영어 학습 정보를 살펴보세요.</p>
+      </div>
+      <div class="subject-link-grid">
+        {% for item in english_links %}
+        <a class="subject-link-card" data-subject="english" href="/{{ item.slug }}/">
+          <span class="card-badge">영어</span>
+          <strong>{{ item.province }} 영어과외</strong>
+          <span>지역별 영어 학습 정보</span>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="home-explore-section school-explore" id="schools" aria-labelledby="school-explore-title">
+  <div class="section-heading">
+    <span class="section-kicker">학교별 탐색</span>
+    <h2 id="school-explore-title">학교별 과외 찾기</h2>
+    <p>학교명을 기준으로 일반과외, 수학과외, 영어과외 정보를 나누어 살펴보세요.</p>
+  </div>
+  <div class="school-explore-grid">
+    {% for school in schools %}
+    <article class="school-card">
+      <strong class="school-name">{{ school.name }}</strong>
+      <span class="school-location">{{ school.location }}</span>
+      <div class="school-card-links" aria-label="{{ school.name }} 과목별 과외">
+        <a href="/{{ school.general.slug }}/">일반</a>
+        <a href="/{{ school.math.slug }}/">수학</a>
+        <a href="/{{ school.english.slug }}/">영어</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="region-school-navigation">
+    <h3>지역별 학교 살펴보기</h3>
+    <div class="region-school-links">
+      {% for item in region_school_links %}
+      <a href="/{{ item.slug }}/">{{ item.province }} 학교</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

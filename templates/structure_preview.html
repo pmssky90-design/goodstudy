@@ -1,0 +1,24 @@
+{# Representative structure-only preview. SEO head/body copy is preserved by the preview builder. #}
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="/">
+      <span class="site-brand-mark">G</span>
+      <span class="site-brand-text"><strong>좋은공부</strong><small>GoodStudy</small></span>
+    </a>
+    <nav class="primary-nav" aria-label="주요 탐색">
+      <a href="/#regions">지역 찾기</a><a href="/#schools">학교 찾기</a>
+      <a href="/#math">수학과외</a><a href="/#english">영어과외</a>
+    </nav>
+  </div>
+</header>
+<main class="site-main" data-entity-type="{{ entity_type }}" data-subject-type="{{ subject_type }}"
+      data-grade-type="{{ grade_type }}" data-region-level="{{ region_level }}">
+  {{ preview_content|safe }}
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><strong>좋은공부</strong><p>학생의 현재 학습을 차분히 살피는 지역·학교별 교육 정보</p></div>
+    <nav aria-label="푸터 탐색"><a href="/">홈</a><a href="/#regions">지역 찾기</a>
+      <a href="/#schools">학교 찾기</a><a href="/#math">수학과외</a><a href="/#english">영어과외</a></nav>
+  </div>
+</footer>

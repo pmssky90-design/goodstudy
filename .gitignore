@@ -1,0 +1,15 @@
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.venv/
+candidate_output/
+candidate_output*/
+intermediate/
+audit/
+node_modules/
+logs/
+*.log
+*.pid
+preview/
+backup_output*/
+current-candidate.json

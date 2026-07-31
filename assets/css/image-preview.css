@@ -1,0 +1,3 @@
+.content-fixed-image{margin:22px 0 0;overflow:hidden;border-radius:14px;background:#fff}
+.content-fixed-image img{display:block;width:100%;max-width:100%;height:auto;border-radius:inherit;object-fit:contain}
+@media(max-width:600px){.content-fixed-image{margin-top:18px;border-radius:10px}}

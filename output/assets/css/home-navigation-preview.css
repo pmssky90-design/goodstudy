@@ -1,0 +1,24 @@
+.home-explore-section{margin-top:58px}
+.home-explore-section .section-kicker{display:block;margin-bottom:5px;color:var(--brand);font-size:.78rem;font-weight:800;letter-spacing:.04em}
+.subject-explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.subject-explore-group{min-width:0;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.subject-group-heading{margin-bottom:17px}.subject-group-heading h3{margin:0 0 5px;font-size:1.16rem;line-height:1.4}.subject-group-heading p{margin:0;color:var(--muted);font-size:.9rem}
+.subject-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.subject-link-card{min-width:0;min-height:112px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:15px;border:1px solid var(--line);border-radius:13px;background:#fff;text-decoration:none;transition:border-color .15s,transform .15s}
+.subject-link-card:hover{border-color:var(--brand);transform:translateY(-1px)}
+.subject-link-card[data-subject=math]{border-top-color:#79aa97}.subject-link-card[data-subject=english]{border-top-color:#8a9db8}
+.card-badge{display:inline-flex;margin-bottom:7px;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--brand-dark);font-size:.72rem;font-weight:800}
+.subject-link-card strong{line-height:1.45}.subject-link-card>span:last-child{margin-top:4px;color:var(--muted);font-size:.79rem}
+.school-explore-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.school-card{min-width:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.school-name{display:block;line-height:1.45}
+.school-location{display:block;min-height:2.8em;margin:5px 0 13px;color:var(--muted);font-size:.8rem;line-height:1.4}
+.school-card-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.school-card-links a,.region-school-links a{min-height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:9px;background:var(--soft);color:var(--brand-dark);font-size:.82rem;font-weight:700;text-decoration:none}
+.school-card-links a:hover,.region-school-links a:hover{border-color:var(--brand);background:#fff}
+.region-school-navigation{margin-top:28px;padding-top:25px;border-top:1px solid var(--line)}.region-school-navigation h3{margin:0 0 13px;font-size:1.08rem}
+.region-school-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.region-school-links a{justify-content:flex-start;padding:9px 12px}
+@media(max-width:1024px){.subject-link-grid{grid-template-columns:1fr}.school-explore-grid,.region-school-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:768px){.subject-explore-grid{grid-template-columns:1fr}.subject-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.school-explore-grid,.region-school-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.home-explore-section{margin-top:44px}.subject-explore-group{padding:17px}.subject-link-grid,.school-explore-grid,.region-school-links{grid-template-columns:1fr}.subject-link-card{min-height:92px}.school-location{min-height:0}.region-school-links a{min-height:44px}}
