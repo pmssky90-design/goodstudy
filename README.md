@@ -18,6 +18,14 @@ python generator.py
 robots와 구조화 데이터는 이 설정을 참조합니다. 페이지의 `slug`와 `title`은 서로
 독립된 필드이며 한쪽으로 다른 쪽을 생성하거나 덮어쓰지 않습니다.
 
+운영 `output`을 정상 생성한 뒤 검색 썸네일 메타와 공개 이미지 자산을 결정적으로
+적용하려면 다음 post-build 명령을 실행합니다. 기본 실행은 운영본을 건드리지 않고
+`candidate_output_search_thumbnail` 후보만 생성합니다.
+
+```powershell
+python build_search_thumbnail_candidate.py --apply-output
+```
+
 학교는 주소의 시도·시군구·읍면동을 기준으로 연결합니다. 정확한 읍면동(0), 시군구(1),
 광역시·대도시(2), 시도(3), 연결 실패(4) 순으로 fallback 수준을 기록하며, 이름이 같은
 다른 도시의 동에는 연결하지 않습니다.
