@@ -1,0 +1,44 @@
+.goodstudy-mobile-contact-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .goodstudy-mobile-contact-cta {
+    position: fixed;
+    right: 12px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    z-index: 9999;
+    display: flex;
+    gap: 8px;
+    max-width: calc(100vw - 24px);
+  }
+
+  .goodstudy-mobile-contact-cta a {
+    display: inline-flex;
+    min-width: 72px;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    box-shadow: 0 5px 18px rgb(24 50 43 / 22%);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .goodstudy-mobile-contact-call {
+    background: #19765a;
+    color: #fff;
+  }
+
+  .goodstudy-mobile-contact-sms {
+    border-color: #19765a !important;
+    background: #fff;
+    color: #155f49;
+  }
+}

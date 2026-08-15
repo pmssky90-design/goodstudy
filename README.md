@@ -24,6 +24,7 @@ robots와 구조화 데이터는 이 설정을 참조합니다. 페이지의 `sl
 
 ```powershell
 python build_search_thumbnail_candidate.py --apply-output
+python build_mobile_contact_candidate.py --apply-output
 ```
 
 학교는 주소의 시도·시군구·읍면동을 기준으로 연결합니다. 정확한 읍면동(0), 시군구(1),
