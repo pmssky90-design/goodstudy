@@ -13,7 +13,8 @@ def check(slug):
         assert response.status==200
         remote=BeautifulSoup(response.read(),'html.parser')
     local=BeautifulSoup((ROOT/'output'/slug/'index.html').read_text(encoding='utf-8'),'html.parser')
-    assert remote.get_text(' ',strip=True)==local.get_text(' ',strip=True),slug
+    # Git/Windows may convert LF to CRLF inside multiline English examples.
+    assert ' '.join(remote.get_text(' ',strip=True).split())==' '.join(local.get_text(' ',strip=True).split()),slug
     assert remote.select_one('link[rel=canonical]')['href']==local.select_one('link[rel=canonical]')['href']
     assert not remote.select_one('meta[name=robots][content*=noindex]')
     return slug+' OK'
