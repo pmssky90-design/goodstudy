@@ -109,3 +109,12 @@ python build_mobile_contact_candidate.py --apply-output
 최초 원문은 `backup_output_middle_math`, 후보는 `candidate_output_middle_math`,
 검사 기록은 `audit/middle-math-rollout.json`에 보관합니다. 기본 실행은 미리보기입니다.
 분류명과 주소를 유지하며 다른 유형의 공통 CSS 파일을 변경하지 않습니다.
+
+## 고등영어과외 승인 디자인 적용
+
+`python scripts/build_high_english_samples.py --all --apply-output`은 고등영어과외
+전체 2,206개(혼합 분류 포함)를 기존 주소에 반영합니다. 지문 여백 해설·선택지 판단·
+내신과 모의고사 적용으로 구성하며 기존 설명과 학교별 연결 링크를 유지합니다.
+최초 원문은 `backup_output_high_english`, 후보는 `candidate_output_high_english`,
+검사 기록은 `audit/high-english-rollout.json`에 보관합니다. 기본 실행은 미리보기입니다.
+예시는 자체 제작한 학습 설명이며 실제 연구나 기출문제가 아닙니다.
