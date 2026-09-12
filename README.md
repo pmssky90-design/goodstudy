@@ -75,3 +75,13 @@ python build_mobile_contact_candidate.py --apply-output
 검사 기록은 `audit/elementary-math-rollout.json`입니다. 옵션 없는 실행은 미리보기입니다.
 교과 전반의 안내 아래 관찰·활동·부모 대화·가정 확인과 원문 학습 설명을 배치합니다.
 활동은 설명용 예시이며 지역의 실제 학생 사례를 주장하지 않습니다.
+
+## 지역별 초등영어과외 승인 디자인 적용
+
+`python scripts/build_elementary_english_samples.py --all --apply-output`은 지역별
+초등영어과외 1,634개에 교재 선택·영어 자료·학교 학습 연결 구성을 반영합니다.
+과목명이 섞인 지역 분류와 학교별 페이지는 제외합니다. 원문을 바탕으로 소리·읽기·
+듣고 말하기 중 대표 구성을 선택하며 실제 지역 사례를 새로 주장하지 않습니다.
+전체 후보 검증 후 적용하고 최초 원문은 `backup_output_elementary_english`, 후보는
+`candidate_output_elementary_english`, 기록은 `audit/elementary-english-rollout.json`에
+저장합니다. 옵션 없는 실행은 세 개의 noindex 미리보기입니다.
