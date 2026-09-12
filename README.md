@@ -56,3 +56,13 @@ python build_mobile_contact_candidate.py --apply-output
 반복 실행은 백업 원문을 사용합니다. 옵션 없는 실행은 세 미리보기만 생성합니다.
 기존 본문 설명·목록·canonical·검색 이미지를 보존하며, 반복 도입과 요약 인용문은
 제외하고 영어 예문·적용 기록·영어 전용 질문을 추가합니다.
+
+## 지역별 수학과외 승인 디자인 적용
+
+`python scripts/build_math_samples.py --all --apply-output`은 순수 지역별 수학과외
+1,634개를 검사한 뒤 기존 주소에 반영합니다. 초등·중등·고등·학교별 수학과외는
+별도로 유지합니다. 후보는 `candidate_output_math`, 최초 원본은 `backup_output_math`,
+검사 기록은 `audit/math-rollout.json`에 저장됩니다. 옵션 없는 실행은 미리보기 3개입니다.
+수학 CSS는 각 HTML에 포함되어 다른 유형의 공통 CSS 파일을 변경하지 않습니다.
+여섯 학년별 유형을 모두 완성한 후 전체 탐색 구조·유형 간 링크·모바일·검색 메타·
+색인 설정을 통합 점검할 예정이며, 그 전에도 매 배포의 기본 검증은 수행합니다.
