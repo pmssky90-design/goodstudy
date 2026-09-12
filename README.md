@@ -85,3 +85,9 @@ python build_mobile_contact_candidate.py --apply-output
 전체 후보 검증 후 적용하고 최초 원문은 `backup_output_elementary_english`, 후보는
 `candidate_output_elementary_english`, 기록은 `audit/elementary-english-rollout.json`에
 저장합니다. 옵션 없는 실행은 세 개의 noindex 미리보기입니다.
+
+추가 승인된 혼합 분류 572개는 `--remaining --apply-output`으로 별도 반영합니다.
+이 옵션은 기존 1,634개를 변경하지 않으며 기존 주소와 분류명을 유지합니다.
+기록은 `audit/elementary-english-remaining-rollout.json`에 저장합니다.
+초등영어과외 분류 전체는 합계 2,206개입니다. 혼합 지역명 데이터의 정규화와
+중복 주소 통합은 이번 콘텐츠 적용과 별도 과제입니다.

@@ -125,8 +125,8 @@ def preview():
     (ROOT/'audit/elementary-english-preview-similarity.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False))
 
-def rollout(apply_output):
-    targets=[p for p in PAGES if eligible(p)]
+def rollout(apply_output,remaining=False):
+    targets=[p for p in PAGES if p['page_type']=='초등영어과외' and not eligible(p)] if remaining else [p for p in PAGES if eligible(p)]
     reports=[]
     print(f'Targets: {len(targets)}',flush=True)
     for p in targets:
@@ -150,14 +150,17 @@ def rollout(apply_output):
             shutil.copy2(ROOT/'candidate_output_elementary_english'/p['slug']/'index.html',OUT/p['slug']/'index.html')
         changed=set(filter(None,subprocess.check_output(['git','diff','HEAD','--name-only','-z','--','output'],cwd=ROOT).decode('utf-8').split('\0')))
         assert changed=={f'output/{p["slug"]}/index.html' for p in targets}
-    (ROOT/'audit/elementary-english-rollout.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
+    report_name='elementary-english-remaining-rollout.json' if remaining else 'elementary-english-rollout.json'
+    (ROOT/'audit'/report_name).write_text(json.dumps(reports,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'validated':len(reports),'applied':apply_output,'variants':dict(Counter(r['variant'] for r in reports)),'retention':dict(Counter(f"{r['retained_items']}/{r['original_items']}" for r in reports))}))
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--all',action='store_true')
+    parser.add_argument('--remaining',action='store_true',help='Explicitly approved 572 legacy mixed-label pages; preserve their URLs and classification labels.')
     parser.add_argument('--apply-output',action='store_true')
     args=parser.parse_args()
-    assert not args.apply_output or args.all
-    if args.all: rollout(args.apply_output)
+    assert not (args.all and args.remaining)
+    assert not args.apply_output or args.all or args.remaining
+    if args.all or args.remaining: rollout(args.apply_output,args.remaining)
     else: preview()
