@@ -66,3 +66,12 @@ python build_mobile_contact_candidate.py --apply-output
 수학 CSS는 각 HTML에 포함되어 다른 유형의 공통 CSS 파일을 변경하지 않습니다.
 여섯 학년별 유형을 모두 완성한 후 전체 탐색 구조·유형 간 링크·모바일·검색 메타·
 색인 설정을 통합 점검할 예정이며, 그 전에도 매 배포의 기본 검증은 수행합니다.
+
+## 지역별 초등수학과외 승인 디자인 적용
+
+`python scripts/build_elementary_math_samples.py --all --apply-output`은 순수 지역별
+초등수학과외 1,634개를 검사한 후 기존 주소에 반영합니다. 후보와 최초 원문은 각각
+`candidate_output_elementary_math`, `backup_output_elementary_math`에 보관합니다.
+검사 기록은 `audit/elementary-math-rollout.json`입니다. 옵션 없는 실행은 미리보기입니다.
+교과 전반의 안내 아래 관찰·활동·부모 대화·가정 확인과 원문 학습 설명을 배치합니다.
+활동은 설명용 예시이며 지역의 실제 학생 사례를 주장하지 않습니다.
