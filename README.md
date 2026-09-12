@@ -100,3 +100,12 @@ python build_mobile_contact_candidate.py --apply-output
 최초 원문은 `backup_output_middle_english`, 후보는 `candidate_output_middle_english`,
 검사 기록은 `audit/middle-english-rollout.json`에 보관합니다. 기본 실행은 미리보기입니다.
 분류명 정규화·주소 통합은 수행하지 않습니다. 공통 CSS 파일은 변경하지 않습니다.
+
+## 중등수학과외 승인 디자인 적용
+
+`python scripts/build_middle_math_samples.py --all --apply-output`은 중등수학과외
+분류 전체 2,206개(혼합 분류 포함)를 기존 주소에 반영합니다. 개념 연결·풀이 근거·
+조건 변경 구성이며, 원문에 따라 방정식·함수·도형 대표 예시를 선택합니다.
+최초 원문은 `backup_output_middle_math`, 후보는 `candidate_output_middle_math`,
+검사 기록은 `audit/middle-math-rollout.json`에 보관합니다. 기본 실행은 미리보기입니다.
+분류명과 주소를 유지하며 다른 유형의 공통 CSS 파일을 변경하지 않습니다.
