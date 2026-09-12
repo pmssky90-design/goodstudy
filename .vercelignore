@@ -1,0 +1,10 @@
+.git
+.venv
+.env*
+backup_output*/
+candidate_output*/
+outputs/
+audit/
+intermediate/
+output/preview-*/
+*.log
