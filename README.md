@@ -91,3 +91,12 @@ python build_mobile_contact_candidate.py --apply-output
 기록은 `audit/elementary-english-remaining-rollout.json`에 저장합니다.
 초등영어과외 분류 전체는 합계 2,206개입니다. 혼합 지역명 데이터의 정규화와
 중복 주소 통합은 이번 콘텐츠 적용과 별도 과제입니다.
+
+## 중등영어과외 승인 디자인 적용
+
+`python scripts/build_middle_english_samples.py --all --apply-output`은 중등영어과외
+분류 전체 2,206개(혼합 분류 포함)를 기존 주소에 반영합니다. 원문 강조점에 따라
+시험 범위·서술형 조건·독해 근거 구성을 선택합니다. 학교별 출제 경향은 주장하지 않습니다.
+최초 원문은 `backup_output_middle_english`, 후보는 `candidate_output_middle_english`,
+검사 기록은 `audit/middle-english-rollout.json`에 보관합니다. 기본 실행은 미리보기입니다.
+분류명 정규화·주소 통합은 수행하지 않습니다. 공통 CSS 파일은 변경하지 않습니다.
