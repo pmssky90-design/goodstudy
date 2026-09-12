@@ -46,3 +46,13 @@ python build_mobile_contact_candidate.py --apply-output
 `backup_output_general`에 보관합니다. 반복 실행 시 이 원본을 사용합니다.
 기본 실행(옵션 없음)은 세 개의 noindex 미리보기만 생성합니다.
 추가 콘텐츠는 공통 안내로, 지역별 실제 운영 사례나 고유 정보를 주장하지 않습니다.
+
+## 지역별 영어과외 승인 디자인 적용
+
+`python scripts/build_english_samples.py --all`은 순수 지역별 영어과외 1,634개만
+`candidate_output_english`에 생성하고 검사합니다. 잘못 분류된 과목명 포함 지역과
+초등·중등·고등·학교별 유형은 제외합니다. `--apply-output`을 함께 주면 전체 검사 후
+원본을 `backup_output_english`에 보관하고 운영 파일에 반영합니다.
+반복 실행은 백업 원문을 사용합니다. 옵션 없는 실행은 세 미리보기만 생성합니다.
+기존 본문 설명·목록·canonical·검색 이미지를 보존하며, 반복 도입과 요약 인용문은
+제외하고 영어 예문·적용 기록·영어 전용 질문을 추가합니다.
